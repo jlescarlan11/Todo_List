@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <dialog>
+      <form id="add-new-menu">
+        <div class="add-new__header">
+          <h2>Add new...</h2>
+          <button class="submit" type="submit">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div class="add-new__content">
+          <div class="add-new__sidebar">
+            <ul class="add-new__options">
+              <li>To Do</li>
+            </ul>
+            <ul class="add-new__options">
+              <li>Project</li>
+            </ul>
+            <ul class="add-new__options">
+              <li>Note</li>
+            </ul>
+          </div>
+          <div class="add-new__entry" id="new-todo-menu">
+            <div>
+              <input
+                type="text"
+                name="task"
+                id="task"
+                placeholder="Input new task here"
+              />
+            </div>
+            <div>
+              <input
+                name="description"
+                id="description"
+                placeholder="description"
+              />
+            </div>
+            <div>
+              <label for="due-date">Due Date: </label>
+              <input type="date" id="due-date" class="placeholder" />
+            </div>
+            <div>
+              <fieldset>
+                <legend>Priority Level</legend>
+                <input
+                  type="radio"
+                  name="priority"
+                  id="urgent"
+                  value="urgent"
+                />
+                <label for="urgent">Urgent </label>
+                <input
+                  type="radio"
+                  name="priority"
+                  id="important"
+                  value="important"
+                />
+                <label for="important">Important </label>
+                <input
+                  type="radio"
+                  name="priority"
+                  id="routine"
+                  value="routine"
+                />
+                <label for="routine">Routine </label>
+                <input
+                  type="radio"
+                  name="priority"
+                  id="optional"
+                  value="optional"
+                />
+                <label for="optional">Optional </label>
+              </fieldset>
+            </div>
+            <div>
+              <label for="project">Project: </label>
+              <select name="project" id="project">
+                <option value="add-new">Add New Project (+)</option>
+              </select>
+            </div>
+            <div class="button-wrapper">
+              <button class="submit" type="submit">Add To Do</button>
+            </div>
+          </div>
+          <div class="add-new__entry" id="new-project-menu">
+            <div>
+              <input
+                type="text"
+                name="project"
+                id="project"
+                placeholder="Title: (e.g. Math 131 Course Tasks)"
+              />
+            </div>
+            <div class="button-wrapper">
+              <button class="submit" type="submit">Add Project</button>
+            </div>
+          </div>
+          <div class="add-new__entry" id="new-note-menu">
+            <div>
+              <input
+                type="text"
+                name="note-title"
+                id="note-title"
+                placeholder="Title (e.g. My Diary)"
+              />
+            </div>
+            <div>
+              <textarea
+                name="note-detailes"
+                id="note-detailes"
+                rows="10"
+                placeholder="Detailes (e.g. I learned something fishy.)"
+              ></textarea>
+            </div>
+            <button class="submit" type="submit">Add Note</button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+    <aside class="sidebar-content">
+      <header class="sidebar-content__header">
+        <nav class="sidebar-content__btn">
+          <span class="material-symbols-outlined close-menu-btn">
+            view_sidebar
+          </span>
+          <span class="material-symbols-outlined add-menu-btn"> add_task </span>
+        </nav>
+      </header>
+      <div class="sidebar-content__tab">
+        <div class="tab-items">
+          <nav class="tab-items__option" id="to-do">
+            <h2>Home</h2>
+            <nav class="option__container">
+              <button>All Task</button>
+              <button>Today</button>
+              <button>Important</button>
+            </nav>
+          </nav>
+          <nav class="tab-items__option" id="project">
+            <h2>Projects</h2>
+            <nav class="option__container" id="project-container"></nav>
+          </nav>
+          <nav class="tab-items__option" id="note">
+            <h2>Notes</h2>
+          </nav>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="main-content__header">
+        <nav class="main-content__btn">
+          <span class="material-symbols-outlined close-menu-btn">
+            view_sidebar
+          </span>
+          <span class="material-symbols-outlined add-menu-btn"> add_task </span>
+        </nav>
+        <div class="main-content__user-accessibility">
+          <h1>User's Hub</h1>
+          <span class="material-symbols-outlined user-accessibility__menu">
+            keyboard_arrow_down
+          </span>
+        </div>
+      </header>
+      <section class="main-content__section"></section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+:root {
+  --bg-color: rgb(34, 40, 49);
+  --bg-color-2: rgba(34, 40, 49, 0.95);
+  --accent-color: rgb(57, 62, 70);
+  --primary-color: rgb(255, 211, 105);
+  --text-color: rgb(238, 238, 238);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 65%;
+}
+
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color-2);
+  color: var(--text-color);
+  min-height: 100dvh;
+}
+
+.main-content {
+  /* transition: margin-left 0.5s; */
+  padding: 1.6rem;
+  margin-left: 25rem;
+}
+
+.main-content__header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1.6rem;
+  gap: 1.6rem;
+}
+
+.sidebar-content {
+  height: 100%;
+  width: 25rem;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+  /* transition: 0.5s; */
+  padding: 0.8rem 1.6rem 1.6rem 1.6rem;
+}
