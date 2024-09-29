@@ -1,5 +1,7 @@
 import { addNoteToList } from "./note.js";
+import { addProjectToList } from "./project.js";
 import { addTodoToList } from "./todo.js";
+import { displayProject } from "./ui.js";
 
 export default () => {
   const addNewOption = document.querySelectorAll(".add-new__options");
@@ -78,31 +80,8 @@ export default () => {
         case "project":
           if (form.checkValidity()) {
             const project = document.querySelector("#add-project__project");
-            const select = document.querySelector(
-              "#new-todo-menu__select-project"
-            );
-            const option = document.createElement("option");
 
-            option.textContent = project.value;
-            option.value = project.value;
-            select.appendChild(option);
-
-            const li = document.createElement("li");
-            const projectContainer = document.querySelector(
-              "#project-container__list-container"
-            );
-
-            li.id = project.value;
-            li.className = "tab";
-
-            console.log(project.value);
-
-            const span = document.createElement("span");
-            span.textContent = project.value;
-
-            li.appendChild(span);
-
-            projectContainer.appendChild(li);
+            addProjectToList(project.value);
 
             dialog.close();
             form.reset();

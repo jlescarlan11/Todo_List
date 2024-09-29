@@ -1,20 +1,23 @@
 import "./styles.css";
 
-import { addTodoToList } from "./todo.js";
-import { initializeUI, displayTodo, displayNote } from "./ui.js";
+import { loadTodoFromLocalStorage } from "./todo.js";
+import {
+  initializeUI,
+  displayTodo,
+  displayNote,
+  displayProject,
+} from "./ui.js";
+import { loadNoteFromLocalStorage } from "./note.js";
 import form from "./form.js";
+import { loadProjectFromLocalStorage } from "./project.js";
 
 form();
 initializeUI();
 
-addTodoToList(
-  "this is the title",
-  "this is the description",
-  "this is date",
-  "this is the priority",
-  "this is project"
-);
-
+loadNoteFromLocalStorage();
+loadTodoFromLocalStorage();
+loadProjectFromLocalStorage();
+displayProject();
 displayTodo();
 
 const homeTab = document.querySelector("#option-container__list-container");

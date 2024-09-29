@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <dialog>
+    <dialog id="add-menu">
       <form id="add-new-menu">
         <div class="add-new__header">
           <h2>Add new...</h2>
@@ -105,6 +105,126 @@
             </div>
             <div class="button-wrapper">
               <button class="submit" type="submit">Add Note</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- <form id="edit-todo">
+        <div class="edit-header"></div>
+        <h2>Edit Project</h2>
+        <span class="material-symbols-outlined add-new__cancel-btn">close</span>
+        <div class="add-new__entry" id="new-todo-menu">
+          <div class="main-item">
+            <div>
+              <input
+                type="text"
+                name="task"
+                id="task"
+                placeholder="Input new task here"
+              />
+            </div>
+            <div>
+              <textarea
+                name="description"
+                id="description"
+                placeholder="Description"
+              ></textarea>
+            </div>
+          </div>
+          <div class="sub-item">
+            <div>
+              <input type="date" id="due-date" />
+            </div>
+            <div>
+              <select name="priority" id="priority">
+                <option value="" disabled selected hidden>
+                  Priority Level
+                </option>
+                <option value="urgent">Urgent</option>
+                <option value="important">Important</option>
+                <option value="routine">Routine</option>
+                <option value="optional">Optional</option>
+              </select>
+            </div>
+            <div>
+              <select name="project" id="new-todo-menu__select-project">
+                <option value="" disabled selected hidden>Project</option>
+              </select>
+            </div>
+          </div>
+          <div class="button-wrapper">
+            <button class="submit" type="submit">Add To Do</button>
+          </div>
+        </div>
+      </form> -->
+    </dialog>
+    <dialog id="edit-menu">
+      <form id="edit-todo-menu">
+        <div class="edit-todo__header">
+          <h2>Edit To Do</h2>
+          <span class="material-symbols-outlined edit-todo__cancel-btn"
+            >close</span
+          >
+        </div>
+
+        <div class="edit-todo__content">
+          <div class="edit-todo__entry">
+            <div class="main-item">
+              <!-- Task Title -->
+              <div>
+                <input
+                  type="text"
+                  name="task"
+                  id="edit-task"
+                  placeholder="Edit task title here"
+                  required
+                />
+              </div>
+
+              <!-- Task Description -->
+              <div>
+                <textarea
+                  name="description"
+                  id="edit-description"
+                  placeholder="Edit task description"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="sub-item">
+              <!-- Due Date -->
+              <div>
+                <input type="date" id="edit-due-date" required />
+              </div>
+
+              <!-- Priority Level -->
+              <div>
+                <select name="priority" id="edit-priority" required>
+                  <option value="" disabled selected hidden>
+                    Priority Level
+                  </option>
+                  <option value="urgent">Urgent</option>
+                  <option value="important">Important</option>
+                  <option value="routine">Routine</option>
+                  <option value="optional">Optional</option>
+                </select>
+              </div>
+
+              <!-- Associated Project -->
+              <div>
+                <select name="project" id="edit-todo-menu__select-project">
+                  <option value="" disabled selected hidden>Project</option>
+                  <!-- Dynamically populated project options -->
+                </select>
+              </div>
+            </div>
+
+            <!-- Save and Cancel Buttons -->
+            <div class="button-wrapper">
+              <button class="submit" type="submit">Save Changes</button>
+              <button class="cancel" type="button" id="edit-cancel-btn">
+                Cancel
+              </button>
             </div>
           </div>
         </div>

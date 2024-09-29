@@ -12,7 +12,7 @@ let myNoteList = [];
 export function addNoteToList(title, details) {
   const newNote = new Note(title, description);
   myNoteList.push(newNote);
-  displayNote();
+  saveNoteFromLocalStorage();
 }
 
 export function getNoteList() {
@@ -21,4 +21,16 @@ export function getNoteList() {
 
 export function clearNoteList() {
   myNoteList = [];
+}
+
+export function saveNoteFromLocalStorage() {
+  localStorage.setItem("note", JSON.stringify(myNoteList));
+}
+
+export function loadNoteFromLocalStorage() {
+  const note = localStorage.getItem("note");
+  console.log(note);
+  if (note) {
+    myNoteList = JSON.parse(note);
+  }
 }

@@ -221,6 +221,10 @@ dialog::backdrop {
   display: none;
 }
 
+/* #add-new-menu {
+  display: none;
+} */
+
 .main-item div * {
   font-family: inherit;
   font-size: inherit;

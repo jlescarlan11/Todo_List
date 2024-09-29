@@ -1,69 +1,178 @@
-<head><script defer src="main.js"></script></head>Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module not found: Error: Can't resolve './src/index.js' in 'D:\Coding\Todo_List\src'
-  ModuleNotFoundError: Module not found: Error: Can't resolve './src/index.js' in 'D:\Cod  ing\Todo_List\src'
-      at D:\Coding\Todo_List\node_modules\webpack\lib\Compilation.js:2109:28
-      at D:\Coding\Todo_List\node_modules\webpack\lib\NormalModuleFactory.js:908:13
-      at eval (eval at create (D:\Coding\Todo_List\node_modules\tapable\lib\HookCodeFacto  ry.js:33:10), <anonymous>:10:1)
-      at D:\Coding\Todo_List\node_modules\webpack\lib\NormalModuleFactory.js:333:22
-      at eval (eval at create (D:\Coding\Todo_List\node_modules\tapable\lib\HookCodeFacto  ry.js:33:10), <anonymous>:9:1)
-      at D:\Coding\Todo_List\node_modules\webpack\lib\NormalModuleFactory.js:512:22
-      at D:\Coding\Todo_List\node_modules\webpack\lib\NormalModuleFactory.js:150:10
-      at D:\Coding\Todo_List\node_modules\webpack\lib\NormalModuleFactory.js:775:25
-      at D:\Coding\Todo_List\node_modules\webpack\lib\NormalModuleFactory.js:992:8
-      at D:\Coding\Todo_List\node_modules\webpack\lib\NormalModuleFactory.js:1121:5
-  
-  - Compilation.js:2109 
-    [Todo_List]/[webpack]/lib/Compilation.js:2109:28
-  
-  - NormalModuleFactory.js:908 
-    [Todo_List]/[webpack]/lib/NormalModuleFactory.js:908:13
-  
-  
-  - NormalModuleFactory.js:333 
-    [Todo_List]/[webpack]/lib/NormalModuleFactory.js:333:22
-  
-  
-  - NormalModuleFactory.js:512 
-    [Todo_List]/[webpack]/lib/NormalModuleFactory.js:512:22
-  
-  - NormalModuleFactory.js:150 
-    [Todo_List]/[webpack]/lib/NormalModuleFactory.js:150:10
-  
-  - NormalModuleFactory.js:775 
-    [Todo_List]/[webpack]/lib/NormalModuleFactory.js:775:25
-  
-  - NormalModuleFactory.js:992 
-    [Todo_List]/[webpack]/lib/NormalModuleFactory.js:992:8
-  
-  - NormalModuleFactory.js:1121 
-    [Todo_List]/[webpack]/lib/NormalModuleFactory.js:1121:5
-  
-  - child-compiler.js:174 
-    [Todo_List]/[html-webpack-plugin]/lib/child-compiler.js:174:18
-  
-  - Compiler.js:627 finalCallback
-    [Todo_List]/[webpack]/lib/Compiler.js:627:5
-  
-  - Compiler.js:662 
-    [Todo_List]/[webpack]/lib/Compiler.js:662:11
-  
-  - Compiler.js:1348 
-    [Todo_List]/[webpack]/lib/Compiler.js:1348:17
-  
-  
-  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
-    [Todo_List]/[tapable]/lib/Hook.js:18:14
-  
-  - Compiler.js:1344 
-    [Todo_List]/[webpack]/lib/Compiler.js:1344:33
-  
-  - Compilation.js:2925 finalCallback
-    [Todo_List]/[webpack]/lib/Compilation.js:2925:11
-  
-  - Compilation.js:3238 
-    [Todo_List]/[webpack]/lib/Compilation.js:3238:11
-  
-  
-</pre>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <dialog>
+      <form id="add-new-menu">
+        <div class="add-new__header">
+          <h2>Add new...</h2>
+          <span class="material-symbols-outlined add-new__cancel-btn"
+            >close</span
+          >
+        </div>
+        <div class="add-new__content">
+          <div class="add-new__sidebar">
+            <ul class="add-new__options" id="todo">
+              <li>To Do</li>
+            </ul>
+            <ul class="add-new__options" id="project">
+              <li>Project</li>
+            </ul>
+            <ul class="add-new__options" id="note">
+              <li>Note</li>
+            </ul>
+          </div>
+          <div class="add-new__entry" id="new-todo-menu">
+            <div class="main-item">
+              <div>
+                <input
+                  type="text"
+                  name="task"
+                  id="task"
+                  placeholder="Input new task here"
+                />
+              </div>
+              <div>
+                <textarea
+                  name="description"
+                  id="description"
+                  placeholder="Description"
+                ></textarea>
+              </div>
+            </div>
+            <div class="sub-item">
+              <div>
+                <input type="date" id="due-date" />
+              </div>
+              <div>
+                <select name="priority" id="priority">
+                  <option value="" disabled selected hidden>
+                    Priority Level
+                  </option>
+                  <option value="urgent">Urgent</option>
+                  <option value="important">Important</option>
+                  <option value="routine">Routine</option>
+                  <option value="optional">Optional</option>
+                </select>
+              </div>
+              <div>
+                <select name="project" id="new-todo-menu__select-project">
+                  <option value="" disabled selected hidden>Project</option>
+                </select>
+              </div>
+            </div>
+            <div class="button-wrapper">
+              <button class="submit" type="submit">Add To Do</button>
+            </div>
+          </div>
+          <div class="add-new__entry" id="new-project-menu">
+            <div class="main-item">
+              <div>
+                <input
+                  type="text"
+                  name="project"
+                  id="add-project__project"
+                  placeholder="Title: (e.g. Math 131 Course Tasks)"
+                />
+              </div>
+            </div>
+            <div class="button-wrapper">
+              <button class="submit" type="submit">Add Project</button>
+            </div>
+          </div>
+          <div class="add-new__entry" id="new-note-menu">
+            <div class="main-item">
+              <div>
+                <input
+                  type="text"
+                  name="note-title"
+                  id="note-title"
+                  placeholder="Title (e.g. My Diary)"
+                />
+              </div>
+              <div>
+                <textarea
+                  name="note-details"
+                  id="note-details"
+                  rows="5"
+                  placeholder="Details (e.g. I learned something fishy.)"
+                ></textarea>
+              </div>
+            </div>
+            <div class="button-wrapper">
+              <button class="submit" type="submit">Add Note</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </dialog>
+    <aside class="sidebar-content">
+      <header class="sidebar-content__header">
+        <div class="sidebar-content__btn">
+          <span class="material-symbols-outlined close-menu-btn">
+            view_sidebar
+          </span>
+          <span class="material-symbols-outlined add-menu-btn"> add_task </span>
+        </div>
+      </header>
+      <div class="sidebar-content__tab">
+        <div class="tab-items">
+          <nav class="tab-items__option" id="to-do">
+            <h2>Home</h2>
+            <nav class="option__container">
+              <ul id="option-container__list-container">
+                <li class="tab" id="all">
+                  <span class="material-symbols-outlined"> task </span> All Task
+                </li>
+                <li class="tab" id="today">
+                  <span class="material-symbols-outlined"> today </span> Today
+                </li>
+                <li class="tab" id="urgent">
+                  <span class="material-symbols-outlined">
+                    assignment_late
+                  </span>
+                  Urgent
+                </li>
+              </ul>
+            </nav>
+          </nav>
+          <nav class="tab-items__option" id="project">
+            <h2>Projects</h2>
+            <nav class="option__container" id="tab-item__project-container">
+              <ul id="project-container__list-container"></ul>
+            </nav>
+          </nav>
+          <nav class="tab-items__option tab" id="tab-note">
+            <h2>Notes</h2>
+          </nav>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="main-content__header">
+        <nav class="main-content__btn">
+          <span class="material-symbols-outlined open-menu-btn">
+            view_sidebar
+          </span>
+          <span class="material-symbols-outlined add-menu-btn"> add_task </span>
+        </nav>
+        <div class="main-content__user-accessibility">
+          <span>User's Hub</span>
+          <span class="material-symbols-outlined user-accessibility__menu">
+            keyboard_arrow_down
+          </span>
+        </div>
+      </header>
+      <section class="main-content__section">
+        <div class="main-content__container">
+          <div class="home-container"></div>
+          <div class="note-container"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
